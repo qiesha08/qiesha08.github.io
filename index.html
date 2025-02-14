@@ -63,9 +63,10 @@
 </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
     
     <div class="gif-container">
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDVkbWNvM3h0YzhwbWpxcTc3Z3lhaXd3bm42d3V4ZnlycmF1bGY1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/phFcBPTl79FQbEuvQ7/giphy.gif" width="300" alt="Cute Puss in Boots">
@@ -99,9 +100,10 @@
         let index = 0;
 
         function startQuestions() {
-            document.getElementById("intro").style.display = "none";
-            document.getElementById("question-container").style.display = "block";
-        }
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("question-container").style.display = "block";
+    document.getElementById('bg-music').play().catch(err => console.log('Autoplay blocked'));
+}
 
         function nextQuestion(answer) {
             if (!answer) {
