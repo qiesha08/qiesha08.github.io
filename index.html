@@ -93,18 +93,6 @@
       // Show the selected step
       document.getElementById(step).style.display = 'block';
     }
-
-    function toggleMute() {
-      const audio = document.querySelector('audio');
-      const button = document.getElementById('muteButton');
-      if (audio.muted) {
-        audio.muted = false;
-        button.textContent = '🔇 Mute';
-      } else {
-        audio.muted = true;
-        button.textContent = '🔊 Unmute';
-      }
-    }
   </script>
 </body>
 </html>
