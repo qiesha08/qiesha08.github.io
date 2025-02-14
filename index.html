@@ -1,24 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgiveness Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe6f2;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff6699;
+    }
+    .button {
+      background-color: #ff6699;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background-color: #ff4d88;
+    }
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff6699;
+    }
+    .heart {
+      font-size: 50px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
-    <audio id="bg-music" loop autoplay>
-        <source src="song.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <div class="container">
-        <div id="question-container">
-            <h1 id="question-text">Do you love me?</h1>
-            <button id="next-btn">Yes</button>
-        </div>
-    </div>
+  <!-- Mute/Unmute Button -->
+  <button id="muteButton" onclick="toggleMute()">🔇 Mute</button>
 
-    <script src="script.js"></script>
+  <!-- Step 1: Greeting -->
+  <div id="step1">
+    <h1>Hey Love ❤️</h1>
+    <p>I have something important to tell you...</p>
+    <button class="button" onclick="nextStep('step2')">Click Here</button>
+  </div>
+
+  <!-- Step 2: Heartfelt Question -->
+  <div id="step2" class="hidden">
+    <h1>Do you remember how special we are together? 💖</h1>
+    <p>I’ve been thinking a lot about us...</p>
+    <button class="button" onclick="nextStep('step3')">Yes, I do</button>
+  </div>
+
+  <!-- Step 3: Apology -->
+  <div id="step3" class="hidden">
+    <h1>I’m so sorry... 😢</h1>
+    <p>I know I’ve made mistakes, and I regret them deeply.</p>
+    <p>You mean everything to me, and I want to make things right.</p>
+    <p>Can you forgive me? ❤️</p>
+    <button class="button" onclick="nextStep('final')">I Forgive You</button>
+  </div>
+
+  <!-- Final Step: Emotional Message -->
+  <div id="final" class="hidden">
+    <h1>Thank you for forgiving me 💕</h1>
+    <p>I promise to do better and cherish you every day.</p>
+    <p>I love you so much! ❤️</p>
+    <div class="heart">❤️</div>
+  </div>
+
+  <script>
+    function nextStep(step) {
+      // Hide all steps
+      document.querySelectorAll('.hidden').forEach(div => {
+        div.style.display = 'none';
+      });
+      // Show the selected step
+      document.getElementById(step).style.display = 'block';
+    }
+
+    function toggleMute() {
+      const audio = document.querySelector('audio');
+      const button = document.getElementById('muteButton');
+      if (audio.muted) {
+        audio.muted = false;
+        button.textContent = '🔇 Mute';
+      } else {
+        audio.muted = true;
+        button.textContent = '🔊 Unmute';
+      }
+    }
+  </script>
 </body>
 </html>
