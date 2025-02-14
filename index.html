@@ -103,10 +103,12 @@
         let index = 0;
 
         function startQuestions() {
+    const audio = document.getElementById('bg-music');
+    audio.play().catch(err => console.log('Autoplay blocked'));
     document.getElementById("intro").style.display = "none";
     document.getElementById("question-container").style.display = "block";
-    document.getElementById('bg-music').play().catch(err => console.log('Autoplay blocked'));
 }
+
 
         function nextQuestion(answer) {
             if (!answer) {
