@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For You ❤️</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #ffe6f2;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #ff6699;
-    }
-    .button {
-      background-color: #ff6699;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    .button:hover {
-      background-color: #ff4d88;
-    }
-    .hidden {
-      display: none;
-      margin-top: 20px;
-      font-size: 20px;
-      color: #ff6699;
-    }
-    .heart {
-      font-size: 50px;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgive Me? 💖🥰</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .question-box {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            position: relative;
+            animation: pop 0.5s ease-in-out;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff1e4d;
+        }
+        #final-message {
+            display: none;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.8); }
+            100% { transform: scale(1); }
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="song.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+    <audio autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/l4FGI8GoTL7N4DsyI/giphy.gif" width="200" alt="Cute Apology">
+    </div>
+    
+    <div id="question-container" class="question-box">
+        <p id="question-text">Do you still love me? 💕🥺</p>
+        <button onclick="nextQuestion(true)">Yes 😍</button>
+        <button onclick="nextQuestion(false)">No 😭</button>
+    </div>
 
-  <!-- Mute/Unmute Button -->
-  <button id="muteButton" onclick="toggleMute()">🔇 Mute</button>
+    <div id="final-message" class="question-box">
+        <p>Yay! You have forgiven me! ❤️🎉🥰</p>
+        <img src="https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif" width="200" alt="Happy GIF">
+    </div>
 
-  <!-- Step 1: Greeting -->
-  <div id="step1">
-    <h1>Hey Love ❤️</h1>
-    <p>I have something important to tell you...</p>
-    <button class="button" onclick="nextStep('step2')">Click Here</button>
-  </div>
+    <script>
+        const questions = [
+            "Do you still love me? 💕🥺",
+            "Do you miss me? 😢",
+            "Can we talk? 💬",
+            "Will you forgive me? ❤️"
+        ];
+        let index = 0;
 
-  <!-- Step 2: Heartfelt Question -->
-  <div id="step2" class="hidden">
-    <h1>Do you remember how special we are together? 💖</h1>
-    <p>I’ve been thinking a lot about us...</p>
-    <button class="button" onclick="nextStep('step3')">Yes, I do</button>
-  </div>
-
-  <!-- Step 3: Apology -->
-  <div id="step3" class="hidden">
-    <h1>I’m so sorry... 😢</h1>
-    <p>I know I’ve made mistakes, and I regret them deeply.</p>
-    <p>You mean everything to me, and I want to make things right.</p>
-    <p>Can you forgive me? ❤️</p>
-    <button class="button" onclick="nextStep('final')">I Forgive You</button>
-  </div>
-
-  <!-- Final Step: Emotional Message -->
-  <div id="final" class="hidden">
-    <h1>Thank you for forgiving me 💕</h1>
-    <p>I promise to do better and cherish you every day.</p>
-    <p>I love you so much! ❤️</p>
-    <div class="heart">❤️</div>
-  </div>
-
-  <script>
-    function nextStep(step) {
-      // Hide all steps
-      document.querySelectorAll('.hidden').forEach(div => {
-        div.style.display = 'none';
-      });
-      // Show the selected step
-      document.getElementById(step).style.display = 'block';
-    }
-  </script>
+        function nextQuestion(answer) {
+            if (!answer) {
+                alert("Oh no! Please think again! 😭");
+                return;
+            }
+            index++;
+            if (index < questions.length) {
+                document.getElementById("question-text").textContent = questions[index];
+            } else {
+                document.getElementById("question-container").style.display = "none";
+                document.getElementById("final-message").style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
