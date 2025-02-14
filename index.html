@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe6f2;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff6699;
+    }
+    .heart {
+      font-size: 50px;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff6699;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey Love! ❤️</h1>
+  <p>Click on the heart to reveal a surprise!</p>
+  <div class="heart" onclick="revealMessage()">❤️</div>
+  <div id="message" class="hidden">
+    You mean the world to me. I love you so much! 😊
+  </div>
+
+  <script>
+    function revealMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
