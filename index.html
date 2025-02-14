@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgive Me? 💖🥰</title>
+    <title>So, you maafkan I tak? Maafkan saya Muhammad Haziq 💖🥰</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -70,30 +70,31 @@
     <div class="gif-container">
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDVkbWNvM3h0YzhwbWpxcTc3Z3lhaXd3bm42d3V4ZnlycmF1bGY1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/phFcBPTl79FQbEuvQ7/giphy.gif" width="300" alt="Cute Puss in Boots">
     </div>
-    <p style="font-size: 24px; font-family: 'Snell Roundhand', cursive; font-weight: bold; color: white; margin-bottom: 20px;">Special for the best man in this world, Muhammad Haziq 💖</p>
+    <p style="font-size: 24px; font-family: 'Snell Roundhand', cursive; font-weight: bold; color: white; margin-bottom: 20px;">Special for the best man in this world, Muhammad Haziq bin Hadi 💖</p>
     <div class="question-box" id="intro">
-        <p>Hi Sayang! I made this web page for you, I hope you are happy with this! 💖🥰</p>
-        <p>Are you okay to continue reading? 😊</p>
-        <button onclick="startQuestions()">Yes 🥰</button>
+        <p>Hi Sayang! (its been a long time, sorry kalau tak suka I called you that), I hope you are doing okay and please take a deep breath before answering the questions okay! 😮‍💨🫣 </p>
+        <p>Okay, are you ready Iqie? ☝️</p>
+        <button onclick="startQuestions()">Yeah, I dah ready 😒</button>
     </div>
     
     <div id="question-container" class="question-box" style="display: none;">
-        <p id="question-text">Do you still love me? 💕🥺</p>
-        <button onclick="nextQuestion(true)">Yes 😍</button>
-        <button onclick="nextQuestion(false)">No 😭</button>
+        <p id="question-text">So, you boleh tak maafkan Shahiera ni Haziq? 🥺</p>
+        <button onclick="nextQuestion(true)">Yessir! 😉</button>
+        <button onclick="nextQuestion(false)">Ugh nooo 🤬</button>
     </div>
 
     <div id="final-message" class="question-box">
-        <p>Yay! You have forgiven me! ❤️🎉🥰</p>
+        <p>Yay! Alhamdulillah! Terima kasih sayang! I sayang you lagi, I doa you sentiasa dijaga Allah SWT okay! ❤️❤️❤️</p>
         <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="200" alt="Happy Cat">
     </div>
 
     <script>
         const questions = [
-            "Do you still love me? 💕🥺",
-            "Do you miss me? 😢",
-            "Can we talk? 💬",
-            "Will you forgive me? ❤️"
+            "You pergi gym best tak sekarang? Dah ada biceps ke tu? 💪",
+            "Ehem..you masih sayang Shahiera ke tak? 🥲💔",
+            "You pernah tak rasa rindu dekat I? Sekali sehari ke at least... 🫠🥺",
+            "You nak tak borak balik dengan I? Kalau tak 24/7 pun at least kita ada borak update our daily activities like before 🥹💬",
+            "Iqie boleh tak maafkan saya yang banyak sangat dosa dengan Iqie? (tapi tak pernah hilang sayang dekat Iqie) ❤️"
         ];
         let index = 0;
 
@@ -104,7 +105,7 @@
 
         function nextQuestion(answer) {
             if (!answer) {
-                alert("Oh no! Please think again! 😭");
+                alert("Oh no! Cuba you fikir balik before jawab! 😭");
                 return;
             }
             index++;
