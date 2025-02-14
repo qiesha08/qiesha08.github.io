@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>This page is for Muhammad Haziq ❤️</title>
+  <title>For You ❤️</title>
   <style>
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -50,18 +50,21 @@
     Your browser does not support the audio element.
   </audio>
 
+  <!-- Mute/Unmute Button -->
+  <button id="muteButton" onclick="toggleMute()">🔇 Mute</button>
+
   <!-- Step 1: Greeting -->
   <div id="step1">
-    <h1>Hey Sayang ❤️</h1>
+    <h1>Hey Love ❤️</h1>
     <p>I have something important to tell you...</p>
     <button class="button" onclick="nextStep('step2')">Click Here</button>
   </div>
 
   <!-- Step 2: Heartfelt Question -->
   <div id="step2" class="hidden">
-    <h1>Do you remember how many days we didn't talk to each other? 🥹</h1>
-    <p>I’ve been thinking a lot about us and you sayang.. Dah more than 15 days</p>
-    <button class="button" onclick="nextStep('step3')">Hmm, okay then?</button>
+    <h1>Do you remember how special we are together? 💖</h1>
+    <p>I’ve been thinking a lot about us...</p>
+    <button class="button" onclick="nextStep('step3')">Yes, I do</button>
   </div>
 
   <!-- Step 3: Apology -->
@@ -83,11 +86,4 @@
 
   <script>
     function nextStep(step) {
-      // Hide all steps
-      document.querySelectorAll('.hidden').forEach(div => div.style.display = 'none');
-      // Show the selected step
-      document.getElementById(step).style.display = 'block';
-    }
-  </script>
-</body>
-</html>
+     
