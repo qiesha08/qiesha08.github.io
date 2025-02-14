@@ -51,7 +51,16 @@
         .gif-container {
             margin-bottom: 20px;
         }
-    </style>
+            .falling-emoji {
+            position: absolute;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-100vh); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+</style>
 </head>
 <body>
     <audio autoplay loop>
@@ -106,6 +115,21 @@
                 document.getElementById("final-message").style.display = "block";
             }
         }
+    </script>
+    <script>
+        function createFallingEmojis() {
+            const emojis = ['💖', '💕', '🥰', '😍', '🌸', '🎀', '💘'];
+            setInterval(() => {
+                let emoji = document.createElement('div');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.classList.add('falling-emoji');
+                document.body.appendChild(emoji);
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.animationDuration = Math.random() * 3 + 2 + 's';
+                setTimeout(() => emoji.remove(), 5000);
+            }, 300);
+        }
+        createFallingEmojis();
     </script>
 </body>
 </html>
