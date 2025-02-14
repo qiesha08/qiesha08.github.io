@@ -50,9 +50,6 @@
     Your browser does not support the audio element.
   </audio>
 
-  <!-- Mute/Unmute Button -->
-  <button id="muteButton" onclick="toggleMute()">🔇 Mute</button>
-
   <!-- Step 1: Greeting -->
   <div id="step1">
     <h1>Hey Love ❤️</h1>
@@ -87,23 +84,9 @@
   <script>
     function nextStep(step) {
       // Hide all steps
-      document.querySelectorAll('.hidden').forEach(div => {
-        div.style.display = 'none';
-      });
+      document.querySelectorAll('.hidden').forEach(div => div.style.display = 'none');
       // Show the selected step
       document.getElementById(step).style.display = 'block';
-    }
-
-    function toggleMute() {
-      const audio = document.querySelector('audio');
-      const button = document.getElementById('muteButton');
-      if (audio.muted) {
-        audio.muted = false;
-        button.textContent = '🔇 Mute';
-      } else {
-        audio.muted = true;
-        button.textContent = '🔊 Unmute';
-      }
     }
   </script>
 </body>
