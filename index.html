@@ -59,10 +59,16 @@
     </audio>
     
     <div class="gif-container">
-        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="200" alt="Cute Apology">
+        <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" width="200" alt="Cute Puss in Boots">
     </div>
     
-    <div id="question-container" class="question-box">
+    <div class="question-box" id="intro">
+        <p>Hi Sayang! I made this web page for you, I hope you are happy with this! 💖🥰</p>
+        <p>Are you okay to continue reading? 😊</p>
+        <button onclick="startQuestions()">Yes 🥰</button>
+    </div>
+    
+    <div id="question-container" class="question-box" style="display: none;">
         <p id="question-text">Do you still love me? 💕🥺</p>
         <button onclick="nextQuestion(true)">Yes 😍</button>
         <button onclick="nextQuestion(false)">No 😭</button>
@@ -70,7 +76,7 @@
 
     <div id="final-message" class="question-box">
         <p>Yay! You have forgiven me! ❤️🎉🥰</p>
-        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="200" alt="Happy GIF">
+        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="200" alt="Happy Cat">
     </div>
 
     <script>
@@ -81,6 +87,11 @@
             "Will you forgive me? ❤️"
         ];
         let index = 0;
+
+        function startQuestions() {
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("question-container").style.display = "block";
+        }
 
         function nextQuestion(answer) {
             if (!answer) {
